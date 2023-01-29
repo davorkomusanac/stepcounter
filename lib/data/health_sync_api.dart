@@ -1,7 +1,14 @@
 import 'dart:developer';
 
 class HealthSyncApi {
-  //TODO implement Health
+  ///I have decided to mock the Health Data based on https://pub.dev/packages/health for several reasons.
+  ///
+  ///With mocking the Health Data I can more easily show changes on the UI
+  ///I can also more easily video record the results
+  ///
+  ///And also, there is the aspect of time and development speed. Based on the due date (end of the weekend)
+  ///I had to make a choice at deciding what are the most important features to implement inside the app
+  ///during the allotted time and on which scale to implement them
 
   bool isSyncAllowed = false;
 
@@ -29,15 +36,17 @@ class HealthSyncApi {
     }
   }
 
+  ///I have created two streams, one for Steps, one for Calories, because of the api in https://pub.dev/packages/health
+  ///It separates calories and steps so I decided to do it here also to stay as much faithful to the api
   Stream<num> watchStepsAchievedToday() => Stream<num>.periodic(
-        const Duration(seconds: 1),
+        const Duration(milliseconds: 500),
         (value) => 100 * value,
       ).takeWhile(
         (_) => isSyncAllowed,
       );
 
   Stream<num> watchCaloriesBurnedToday() => Stream<num>.periodic(
-        const Duration(seconds: 1),
+        const Duration(milliseconds: 500),
         (value) => value + 1,
       ).takeWhile(
         (_) => isSyncAllowed,

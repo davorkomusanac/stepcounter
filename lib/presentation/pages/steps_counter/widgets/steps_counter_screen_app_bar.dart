@@ -18,7 +18,8 @@ class StepsCounterScreenAppBar extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
-                log('back button called, not implemented since there is only one screen currently');
+                log('back button called, not implemented since there is only one screen currently'
+                    ' and nothing was noted in the design');
               },
               icon: const Icon(
                 Icons.arrow_back_ios_new,

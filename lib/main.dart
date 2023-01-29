@@ -36,9 +36,6 @@ void main() async {
   runApp(const MyApp());
 }
 
-//TODO edit README inside app to explain some architecture decisions and choices
-//Explain what was the logic, how some widgets were made to save time, etc.
-//Also show a .gif inside readme where they can see how it looks like.
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

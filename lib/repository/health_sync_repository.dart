@@ -14,8 +14,7 @@ class HealthSyncRepository implements HealthSyncInterface {
       return await healthSyncApi.disconnectRequested();
     } catch (e) {
       log(e.toString());
-      //TODO Check error message here and put some constant message
-      throw 'Some Error While Disconnecting';
+      throw e.toString();
     }
   }
 
@@ -25,8 +24,7 @@ class HealthSyncRepository implements HealthSyncInterface {
       return await healthSyncApi.syncRequested();
     } catch (e) {
       log(e.toString());
-      //TODO Check error message here and put some constant message
-      throw 'Some Error While Requesting';
+      throw e.toString();
     }
   }
 
@@ -34,7 +32,7 @@ class HealthSyncRepository implements HealthSyncInterface {
   Stream<num> watchCaloriesBurnedToday() => healthSyncApi.watchCaloriesBurnedToday().handleError(
         (e) {
           log(e.toString());
-          throw 'Some error while calling calories';
+          throw e.toString();
         },
       );
 
@@ -42,7 +40,7 @@ class HealthSyncRepository implements HealthSyncInterface {
   Stream<num> watchStepsAchievedToday() => healthSyncApi.watchStepsAchievedToday().handleError(
         (e) {
           log(e.toString());
-          throw 'Some error while calling steps';
+          throw e.toString();
         },
       );
 }
