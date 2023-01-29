@@ -2,8 +2,6 @@ part of 'health_sync_bloc.dart';
 
 ///We are using here enums for differentiating State so that we don't need to create additional classes for each State status
 enum HealthSyncStatus {
-  initial,
-  //TODO Check if loading is necessary, if just initial or loading is enough
   loading,
   success,
   error,
@@ -11,7 +9,7 @@ enum HealthSyncStatus {
 
 class HealthSyncState extends Equatable {
   const HealthSyncState({
-    this.status = HealthSyncStatus.initial,
+    this.status = HealthSyncStatus.success,
     this.stepsAchievedToday = 0,
     this.caloriesBurnedToday = 0,
     this.isHealthSynced = false,
