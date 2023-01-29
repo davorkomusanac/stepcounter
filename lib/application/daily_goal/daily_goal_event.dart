@@ -6,3 +6,5 @@ class DailyGoalChanged extends DailyGoalEvent {
   final int dailyGoal;
   DailyGoalChanged({required this.dailyGoal});
 }
+
+class DailyGoalNotificationButtonPressed extends DailyGoalEvent {}

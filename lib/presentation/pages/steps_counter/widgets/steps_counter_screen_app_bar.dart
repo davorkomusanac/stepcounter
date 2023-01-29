@@ -1,7 +1,10 @@
 import 'dart:developer';
 
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../application/daily_goal/daily_goal_bloc.dart';
 import '../../../../constants/colors.dart';
 
 class StepsCounterScreenAppBar extends StatelessWidget {
@@ -23,15 +26,19 @@ class StepsCounterScreenAppBar extends StatelessWidget {
                 size: 26,
               ),
             ),
-            IconButton(
-              onPressed: () {
-                //TODO Implement disable/turn on notification
-                //TODO change icon then based on notification
-              },
-              icon: const Icon(
-                Icons.notifications_off_outlined,
-                color: AppColors.darkBlue,
-                size: 26,
+            BlocBuilder<DailyGoalBloc, DailyGoalState>(
+              builder: (context, state) => IconButton(
+                onPressed: () {
+                  context.read<DailyGoalBloc>().add(
+                        DailyGoalNotificationButtonPressed(),
+                      );
+                  AwesomeNotifications().cancelAll();
+                },
+                icon: Icon(
+                  state.isNotificationDisabled ? Icons.notifications_active : Icons.notifications_off_outlined,
+                  color: AppColors.darkBlue,
+                  size: 26,
+                ),
               ),
             ),
           ],

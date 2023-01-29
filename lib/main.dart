@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +21,18 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+  AwesomeNotifications().initialize(
+    //passing null so that default app icon is used
+    null,
+    [
+      NotificationChannel(
+        channelGroupKey: AppStrings.awesomeNotificationChannelGroupKey,
+        channelKey: AppStrings.awesomeNotificationChannelKey,
+        channelName: AppStrings.awesomeNotificationChannelName,
+        channelDescription: AppStrings.awesomeNotificationChannelDescription,
+      )
+    ],
+  );
   runApp(const MyApp());
 }
 
