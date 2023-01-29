@@ -37,6 +37,12 @@ class HealthSyncBloc extends Bloc<HealthSyncEvent, HealthSyncState> {
   ) async {
     log('HealthSyncRequested called');
     try {
+      emit(
+        state.copyWith(
+          status: HealthSyncStatus.loading,
+        ),
+      );
+
       final isHealthSynced = await healthSyncRepository.syncRequested();
 
       if (isHealthSynced) {
@@ -64,6 +70,12 @@ class HealthSyncBloc extends Bloc<HealthSyncEvent, HealthSyncState> {
   ) async {
     log('HealthSyncDisconnectRequested called');
     try {
+      emit(
+        state.copyWith(
+          status: HealthSyncStatus.loading,
+        ),
+      );
+
       final isHealthSynced = await healthSyncRepository.disconnectRequested();
 
       if (!isHealthSynced) {
