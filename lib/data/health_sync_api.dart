@@ -31,14 +31,14 @@ class HealthSyncApi {
 
   Stream<num> watchStepsAchievedToday() => Stream<num>.periodic(
         const Duration(seconds: 1),
-        (value) => value + 2,
+        (value) => 100 * value,
       ).takeWhile(
         (_) => isSyncAllowed,
       );
 
   Stream<num> watchCaloriesBurnedToday() => Stream<num>.periodic(
         const Duration(seconds: 1),
-        (value) => value + 0.5,
+        (value) => value + 1,
       ).takeWhile(
         (_) => isSyncAllowed,
       );
