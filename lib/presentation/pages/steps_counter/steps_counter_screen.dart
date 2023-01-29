@@ -27,6 +27,7 @@ class _StepCounterScreenState extends State<StepCounterScreen> {
   @override
   void initState() {
     super.initState();
+    //When the user opens the app we check for notification permission
     AwesomeNotifications().isNotificationAllowed().then((isAllowed) {
       if (!isAllowed) {
         AwesomeNotifications().requestPermissionToSendNotifications();

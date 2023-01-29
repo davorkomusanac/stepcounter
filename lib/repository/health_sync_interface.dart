@@ -3,7 +3,6 @@ abstract class HealthSyncInterface {
 
   Stream<num> watchCaloriesBurnedToday();
 
-  //TODO handle this
   Future<void> syncRequested();
 
   Future<void> disconnectRequested();
