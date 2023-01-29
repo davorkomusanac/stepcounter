@@ -20,6 +20,7 @@ dependencies:
   bottom_picker: ^2.0.1
   hydrated_bloc: ^9.0.0
   path_provider: ^2.0.12
+  awesome_notifications: ^0.7.4+1
 
 dev_dependencies:
   flutter_test:
