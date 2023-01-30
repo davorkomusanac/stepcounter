@@ -10,6 +10,7 @@ As requested, Bloc was used over Cubits for state management, and in some cases 
 
 For the reminder at 8pm if the user did not achieve his goal, I used local notifications as requested, without using any push service, although it came with several tehnical caveats (if it were for production release), but it works for the development purposes.
 
-https://user-images.githubusercontent.com/53110486/215367256-c0fb90e0-3362-4f87-b0f9-32ce33a56636.mp4
+
+https://user-images.githubusercontent.com/53110486/215369750-62bf7ba9-aa6e-451b-b491-edebfbe8bf9c.mp4
 
 https://user-images.githubusercontent.com/53110486/215367269-dfc84ed3-e254-45ba-bfdf-2c4685ec3a2c.mp4
