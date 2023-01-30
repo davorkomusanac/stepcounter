@@ -10,6 +10,7 @@ class AppStrings {
   static const bottomPickerDescription = 'A good average is 6000';
 
   static const awesomeNotificationChannelGroupKey = 'basic_channel_group';
+  static const awesomeNotificationChannelGroupName = 'Basic group';
   static const awesomeNotificationChannelKey = 'basic_channel';
   static const awesomeNotificationChannelName = 'Basic notifications';
   static const awesomeNotificationChannelDescription = 'Notification channel for basic tests';

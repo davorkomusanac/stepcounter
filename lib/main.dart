@@ -21,7 +21,7 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-  AwesomeNotifications().initialize(
+  await AwesomeNotifications().initialize(
     //passing null so that default app icon is used
     null,
     [
@@ -31,6 +31,12 @@ void main() async {
         channelName: AppStrings.awesomeNotificationChannelName,
         channelDescription: AppStrings.awesomeNotificationChannelDescription,
       )
+    ],
+    channelGroups: [
+      NotificationChannelGroup(
+        channelGroupKey: AppStrings.awesomeNotificationChannelGroupKey,
+        channelGroupName: AppStrings.awesomeNotificationChannelGroupName,
+      ),
     ],
   );
   runApp(const MyApp());
