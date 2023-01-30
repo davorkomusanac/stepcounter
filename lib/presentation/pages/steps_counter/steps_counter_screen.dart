@@ -38,7 +38,6 @@ class _StepCounterScreenState extends State<StepCounterScreen> {
   void handleNotification() {
     //Get currentDateTime and if on the current day it is less than 8 p.m. then schedule a notification
     DateTime currentDateTime = DateTime.now();
-    AwesomeNotifications().cancelAll();
     if (currentDateTime.hour < 20) {
       AwesomeNotifications().createNotification(
         content: NotificationContent(
